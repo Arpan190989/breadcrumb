@@ -1,0 +1,23 @@
+<div class="container-fluid has-line-top-bottom" data-sly-use.breadcrumb="${'com.aem.sample.core.models.BreadcrumbModel'}">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="breadcrumb-wrapper__fullwidth'}">
+                    <nav class="breadcrumb-navigation">
+	                    <ul class="breadcrumb-navigation__list" data-sly-test="${breadcrumb.navList} "
+							data-sly-list.element="${breadcrumb.navList}" itemscope itemtype="http://schema.org/BreadcrumbList">
+							<li class="breadcrumb-navigation__item" data-sly-test="${element.path != currentPage.path}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+								<a href="${element.path}.html" title="${element.properties.navTitle || element.title || element.name}" itemprop="item">
+									<div itemprop="name">${element.properties.navTitle || element.title || element.name}</div>
+								</a>
+								<meta itemprop="position" content="${elementList.count}" />
+							</li>
+							<li class="breadcrumb-navigation__item" data-sly-test="${element.path == currentPage.path}">
+								<span>${element.properties.navTitle || element.title || element.name}</span></li>
+						</ul>
+                    </nav>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
